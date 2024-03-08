@@ -1,3 +1,87 @@
-.App {
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  width: 100%;
+  height: auto;
+  padding: 1rem;
+  position: relative;
+  background: #efededb9;
+}
+
+.header_container {
+  border: 1px solid red;
+  /* background: linear-gradient(to bottom, #05bc52, #038dab); */
+  width: 80%;
+  padding: 1rem;
+  position: absolute;
+  top: 3%;
+  left: 10%;
+  /* color: #fff; */
   text-align: center;
+  transform: skewX(-20deg);
+}
+.header_container div {
+  transform: skewX(20deg);
+}
+.header_container h1 {
+  padding: 1rem;
+}
+
+.Music_title {
+  font-weight: bolder;
+  padding: 0.5rem 0;
+}
+
+.btn_container {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: left;
+  gap: 1rem;
+}
+
+.btn {
+  border: none;
+  background: #02894d;
+  padding: 10px;
+  cursor: pointer;
+  color: #fff;
+  transition: all 0.5s;
+}
+.btn:hover {
+  opacity: 0.8;
+}
+.btn:active {
+  opacity: 1;
+}
+.main_container {
+  border: 1px solid blue;
+  width: 85%;
+  height: 70vh;
+  margin-top: 10rem;
+  padding: 1rem;
+  position: relative;
+  left: 8%;
+  overflow-y: scroll;
+  display: grid;
+  grid-template-columns: 5fr 5fr 5fr 5fr;
+  gap: 4rem;
+}
+.Add_song {
+  position: absolute;
+  top: 3%;
+  left: 90%;
+}
+.image_container {
+  border: 1px solid green;
+  width: 100%;
+  max-height: 300px;
+  margin-top: 5rem;
+}
+.image_container img {
+  width: 100%;
+  min-height: 200px;
+  object-fit: cover;
 }
