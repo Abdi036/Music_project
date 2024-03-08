@@ -43,6 +43,8 @@ function Musics() {
       <MusicInfo />
       <MusicInfo />
       <MusicInfo />
+      <MusicInfo />
+      <MusicInfo />
     </main>
   );
 }
