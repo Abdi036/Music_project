@@ -48,9 +48,9 @@ body {
   font-weight: 500;
 }
 
-.Music_title {
+.Music {
   font-weight: bolder;
-  padding: 0.5rem 0;
+  font-size: larger;
 }
 
 .btn_container {
@@ -89,7 +89,7 @@ body {
 .Add_song {
   position: absolute;
   top: -4%;
-  left: 90%;
+  left: 1.5%;
 }
 .image_container {
   width: 100%;
@@ -104,6 +104,7 @@ body {
 
 .footer {
   padding: 2rem;
+  font-size: 15px;
   text-align: center;
   margin-top: 3rem;
   color: #3c3b3b;

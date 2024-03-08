@@ -4,6 +4,7 @@
     "musicTitle": "Shape of You",
     "artist": "Ed Sheeran",
     "duration": "3:53",
+    "image": "shape_of_you.jpg",
     "genre": "Pop"
   },
   {
@@ -11,6 +12,7 @@
     "musicTitle": "Bohemian Rhapsody",
     "artist": "Queen",
     "duration": "5:55",
+    "image": "boheman_rhapsody.webp",
     "genre": "Rock"
   },
   {
@@ -18,6 +20,7 @@
     "musicTitle": "Hey Jude",
     "artist": "The Beatles",
     "duration": "7:11",
+    "image": "hey_jude.jpg",
     "genre": "Rock"
   },
   {
@@ -25,6 +28,7 @@
     "musicTitle": "Sweet Child o' Mine",
     "artist": "Guns N' Roses",
     "duration": "5:55",
+    "image": "sweet_child_o'mine.jpg",
     "genre": "Rock"
   },
   {
@@ -32,6 +36,7 @@
     "musicTitle": "Hotel California",
     "artist": "Eagles",
     "duration": "6:30",
+    "image": "sweet_child_o'mine.jpg",
     "genre": "Rock"
   },
   {
@@ -39,6 +44,7 @@
     "musicTitle": "Imagine",
     "artist": "John Lennon",
     "duration": "3:04",
+    "image": "Imagine.jpg",
     "genre": "Pop"
   },
   {
@@ -46,6 +52,7 @@
     "musicTitle": "Thriller",
     "artist": "Michael Jackson",
     "duration": "5:57",
+    "image": "Thriller.jpg",
     "genre": "Pop"
   },
   {
@@ -53,6 +60,7 @@
     "musicTitle": "Smells Like Teen Spirit",
     "artist": "Nirvana",
     "duration": "5:01",
+    "image": "Nirvana.jpg",
     "genre": "Grunge"
   },
   {
@@ -60,6 +68,7 @@
     "musicTitle": "Rolling in the Deep",
     "artist": "Adele",
     "duration": "3:48",
+    "image": "rolling in the deep.jpg",
     "genre": "Pop"
   },
   {
@@ -67,6 +76,7 @@
     "musicTitle": "Billie Jean",
     "artist": "Michael Jackson",
     "duration": "4:54",
+    "image": "Billie jean.jpg",
     "genre": "Pop"
   },
   {
@@ -74,6 +84,7 @@
     "musicTitle": "Stairway to Heaven",
     "artist": "Led Zeppelin",
     "duration": "8:02",
+    "image": "stairway to heaven.jpg",
     "genre": "Rock"
   },
   {
@@ -81,6 +92,7 @@
     "musicTitle": "Piano Man",
     "artist": "Billy Joel",
     "duration": "5:38",
+    "image": "pianoMan.jpg",
     "genre": "Soft Rock"
   },
   {
@@ -88,6 +100,7 @@
     "musicTitle": "Wonderwall",
     "artist": "Oasis",
     "duration": "4:18",
+    "image": "wonderwall.jpg",
     "genre": "Britpop"
   },
   {
@@ -95,6 +108,7 @@
     "musicTitle": "Boogie Wonderland",
     "artist": "Earth, Wind & Fire",
     "duration": "4:48",
+    "image": "Boogie wonderland.jpg",
     "genre": "Disco"
   },
   {
@@ -102,6 +116,7 @@
     "musicTitle": "Don't Stop Believin'",
     "artist": "Journey",
     "duration": "4:09",
+    "image": "don't stop believin.jpg",
     "genre": "Rock"
   },
   {
@@ -109,6 +124,7 @@
     "musicTitle": "Uptown Funk",
     "artist": "Mark Ronson ft. Bruno Mars",
     "duration": "4:30",
+    "image": "don't stop believin.jpg",
     "genre": "Funk"
   }
 ]

@@ -46,12 +46,17 @@ function MusicInfo() {
   return musicData.map((data) => (
     <div key={data.id} className="image_container">
       <a href="#">
-        <img src="imgs/Wall-e.jpg" alt="Wall-E" />
+        <img
+          width={"300px"}
+          height={"200px"}
+          src={`imgs/${data.image}`}
+          alt={data.musicTitle}
+        />
       </a>
-      <h4 className="Music_title">musicTitle:{data.musicTitle}</h4>
-      <h4 className="Music_Artist">Artist:{data.artist}</h4>
-      <h4 className="Music_Duration">Duration:{data.duration}</h4>
-      <h4 className="Music_genre">gener:{data.genre}</h4>
+      <h4 className="Music">musicTitle:{data.musicTitle}</h4>
+      <h4 className="Music">Artist:{data.artist}</h4>
+      <h4 className="Music">Duration:{data.duration}</h4>
+      <h4 className="Music">gener:{data.genre}</h4>
       <div className="btn_container">
         <button className="btn">Delete</button>
         <button className="btn">Update</button>
@@ -61,11 +66,7 @@ function MusicInfo() {
 }
 
 function Footer() {
-  return (
-    <div className="footer">
-      <footer>@music All rights reserved &copy;</footer>
-    </div>
-  );
+  return <div className="footer">@music_page All rights reserved &copy;</div>;
 }
 
 export default App;
