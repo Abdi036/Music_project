@@ -45,7 +45,7 @@ function Musics() {
 function MusicInfo() {
   return musicData.map((data) => (
     <div key={data.id} className="image_container">
-      <a href="#">
+      <a href>
         <img
           width={"300px"}
           height={"200px"}
