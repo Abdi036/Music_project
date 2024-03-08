@@ -4,6 +4,7 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <List />
       <Musics />
       <Footer />
     </div>
@@ -14,31 +15,27 @@ function Header() {
   return (
     <header className="header_container">
       <div>
-        <div style={{ textAlign: "center" }}>
-          <h1>Music List</h1>
-        </div>
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti
-          pariatur magni sunt eveniet alias debitis ipsum vitae velit molestias
-          quibusdam. Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-          Deleniti pariatur magni sunt eveniet alias debitis ipsum vitae velit
-          molestias quibusdam. Lorem ipsum dolor, sit amet consectetur
-          adipisicing elit. Deleniti pariatur magni sunt eveniet alias debitis
-          ipsum vitae velit molestias quibusdam.
-        </p>
+        <h1>
+          Music is the universal language that transcends boundaries, speaks to
+          the soul, and paints emotions on the canvas of our existence.
+        </h1>
       </div>
     </header>
+  );
+}
+
+function List() {
+  return (
+    <div className="music_list">
+      <h2>Music list</h2>
+    </div>
   );
 }
 
 function Musics() {
   return (
     <main className="main_container">
-      <button className=" Add_song btn">Add Song</button>
-      <MusicInfo />
-      <MusicInfo />
-      <MusicInfo />
-      <MusicInfo />
+      <button className=" Add_song btn">Add Music</button>
       <MusicInfo />
       <MusicInfo />
       <MusicInfo />

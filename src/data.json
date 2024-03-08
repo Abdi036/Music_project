@@ -1,32 +1,98 @@
 [
   {
-    " musicTitle": "Shape of you",
-    "Artist": "Ed-shearen",
-    "gener": "pop"
+    "musicTitle": "Shape of You",
+    "artist": "Ed Sheeran",
+    "duration": "3:53",
+    "genre": "Pop"
   },
   {
-    " musicTitle": "Shape of you",
-    "Artist": "Ed-shearen",
-    "gener": "pop"
+    "musicTitle": "Bohemian Rhapsody",
+    "artist": "Queen",
+    "duration": "5:55",
+    "genre": "Rock"
   },
   {
-    " musicTitle": "Shape of you",
-    "Artist": "Ed-shearen",
-    "gener": "pop"
+    "musicTitle": "Hey Jude",
+    "artist": "The Beatles",
+    "duration": "7:11",
+    "genre": "Rock"
   },
   {
-    " musicTitle": "Shape of you",
-    "Artist": "Ed-shearen",
-    "gener": "pop"
+    "musicTitle": "Sweet Child o' Mine",
+    "artist": "Guns N' Roses",
+    "duration": "5:55",
+    "genre": "Rock"
   },
   {
-    " musicTitle": "Shape of you",
-    "Artist": "Ed-shearen",
-    "gener": "pop"
+    "musicTitle": "Hotel California",
+    "artist": "Eagles",
+    "duration": "6:30",
+    "genre": "Rock"
   },
   {
-    " musicTitle": "Shape of you",
-    "Artist": "Ed-shearen",
-    "gener": "pop"
+    "musicTitle": "Imagine",
+    "artist": "John Lennon",
+    "duration": "3:04",
+    "genre": "Pop"
+  },
+  {
+    "musicTitle": "Thriller",
+    "artist": "Michael Jackson",
+    "duration": "5:57",
+    "genre": "Pop"
+  },
+  {
+    "musicTitle": "Smells Like Teen Spirit",
+    "artist": "Nirvana",
+    "duration": "5:01",
+    "genre": "Grunge"
+  },
+  {
+    "musicTitle": "Rolling in the Deep",
+    "artist": "Adele",
+    "duration": "3:48",
+    "genre": "Pop"
+  },
+  {
+    "musicTitle": "Billie Jean",
+    "artist": "Michael Jackson",
+    "duration": "4:54",
+    "genre": "Pop"
+  },
+  {
+    "musicTitle": "Stairway to Heaven",
+    "artist": "Led Zeppelin",
+    "duration": "8:02",
+    "genre": "Rock"
+  },
+  {
+    "musicTitle": "Piano Man",
+    "artist": "Billy Joel",
+    "duration": "5:38",
+    "genre": "Soft Rock"
+  },
+  {
+    "musicTitle": "Wonderwall",
+    "artist": "Oasis",
+    "duration": "4:18",
+    "genre": "Britpop"
+  },
+  {
+    "musicTitle": "Boogie Wonderland",
+    "artist": "Earth, Wind & Fire",
+    "duration": "4:48",
+    "genre": "Disco"
+  },
+  {
+    "musicTitle": "Don't Stop Believin'",
+    "artist": "Journey",
+    "duration": "4:09",
+    "genre": "Rock"
+  },
+  {
+    "musicTitle": "Uptown Funk",
+    "artist": "Mark Ronson ft. Bruno Mars",
+    "duration": "4:30",
+    "genre": "Funk"
   }
 ]
