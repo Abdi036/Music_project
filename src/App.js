@@ -14,11 +14,17 @@ function Header() {
   return (
     <header className="header_container">
       <div>
-        <h1>Music List</h1>
+        <div style={{ textAlign: "center" }}>
+          <h1>Music List</h1>
+        </div>
         <p>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti
           pariatur magni sunt eveniet alias debitis ipsum vitae velit molestias
-          quibusdam.
+          quibusdam. Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+          Deleniti pariatur magni sunt eveniet alias debitis ipsum vitae velit
+          molestias quibusdam. Lorem ipsum dolor, sit amet consectetur
+          adipisicing elit. Deleniti pariatur magni sunt eveniet alias debitis
+          ipsum vitae velit molestias quibusdam.
         </p>
       </div>
     </header>
@@ -29,6 +35,10 @@ function Musics() {
   return (
     <main className="main_container">
       <button className=" Add_song btn">Add Song</button>
+      <MusicInfo />
+      <MusicInfo />
+      <MusicInfo />
+      <MusicInfo />
       <MusicInfo />
       <MusicInfo />
       <MusicInfo />
@@ -53,8 +63,8 @@ function MusicInfo() {
 
 function Footer() {
   return (
-    <div>
-      <footer></footer>
+    <div className="footer">
+      <footer>@music All rights reserved &copy;</footer>
     </div>
   );
 }
