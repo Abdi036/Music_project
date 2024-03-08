@@ -1,3 +1,4 @@
+import musicData from "./data.json";
 import "./App.css";
 
 function App() {
@@ -37,25 +38,26 @@ function Musics() {
     <main className="main_container">
       <button className=" Add_song btn">Add Music</button>
       <MusicInfo />
-      <MusicInfo />
-      <MusicInfo />
-      <MusicInfo />
     </main>
   );
 }
+
 function MusicInfo() {
-  return (
-    <div className="image_container">
-      <a href>
+  return musicData.map((data) => (
+    <div key={data.id} className="image_container">
+      <a href="#">
         <img src="imgs/Wall-e.jpg" alt="Wall-E" />
       </a>
-      <h4 className="Music_title">musicTitle:shape of you</h4>
+      <h4 className="Music_title">musicTitle:{data.musicTitle}</h4>
+      <h4 className="Music_Artist">Artist:{data.artist}</h4>
+      <h4 className="Music_Duration">Duration:{data.duration}</h4>
+      <h4 className="Music_genre">gener:{data.genre}</h4>
       <div className="btn_container">
         <button className="btn">Delete</button>
         <button className="btn">Update</button>
       </div>
     </div>
-  );
+  ));
 }
 
 function Footer() {

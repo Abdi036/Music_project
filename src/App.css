@@ -20,7 +20,7 @@ body {
   width: 80%;
   padding: 1rem 1.5rem;
   position: absolute;
-  top: 3%;
+  top: 1%;
   left: 10%;
   text-align: justify;
   transform: skewX(-20deg);
@@ -88,7 +88,7 @@ body {
 
 .Add_song {
   position: absolute;
-  top: -8%;
+  top: -4%;
   left: 90%;
 }
 .image_container {
