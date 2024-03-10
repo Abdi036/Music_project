@@ -112,7 +112,7 @@ form button {
   margin-top: 6rem;
   padding: 1rem;
   position: relative;
-  left: 8%;
+  left: 5%;
   display: grid;
   grid-template-columns: 5fr 5fr 5fr 5fr;
   gap: 4rem;
