@@ -1,13 +1,19 @@
-import musicData from "./data.json";
 import "./App.css";
+import musicData from "./data.json";
 import { useState } from "react";
 
 export default function App() {
+  const [musicList, setMusicList] = useState([]);
+
+  function addMusic(music) {
+    setMusicList([...musicList, music]);
+  }
+
   return (
     <div className="App">
       <Header />
-      <MusicForm />
-      <Musics />
+      <MusicForm onAddMusic={addMusic} />
+      <Musics musicList={musicList} />
       <Footer />
     </div>
   );
@@ -31,34 +37,42 @@ function Header() {
   );
 }
 
-function Musics() {
+function Musics({ musicList }) {
   return (
     <main className="main_container">
-      <MusicInfo />
+      <NewMusic musicList={musicList} />
+      <MusicDetail />
     </main>
   );
 }
 
 /////////// a component for adding(rendering) a music from the form //////////
 
-function MusicForm() {
+function MusicForm({ onAddMusic }) {
   const [title, setTitle] = useState("");
   const [artist, setArtist] = useState("");
   const [duration, setDuration] = useState("");
   const [genre, setGenre] = useState("");
+  const [image, setImage] = useState(null);
 
-    // inner function to handle the submit button
+  // inner function to handle the submit button
   function handleSubmit(e) {
     e.preventDefault();
     if (!title || !artist || !duration || !genre) return;
-    const elements = { title, artist, duration, genre };
-    console.log(elements);
+    const music = { title, artist, duration, genre, image };
+    onAddMusic(music);
 
     setTitle("");
     setArtist("");
     setDuration("");
     setGenre("");
+    setImage(null);
   }
+  function handleImageChange(e) {
+    const file = e.target.files[0];
+    setImage(URL.createObjectURL(file));
+  }
+
   return (
     <div className="music_Form_Container">
       <form onSubmit={handleSubmit}>
@@ -104,6 +118,11 @@ function MusicForm() {
             onChange={(e) => setGenre(e.target.value)}
           />
         </div>
+        <div>
+          <label>Image:</label>
+          <input type="file" accept="image/*" onChange={handleImageChange} />
+        </div>
+
         <button type="submit" className="btn">
           Add Music
         </button>
@@ -120,11 +139,10 @@ function MusicForm() {
   );
 }
 
-// ////// a component for musicInformation/////////////
-
-function MusicInfo() {
-  return musicData.map((data) => (
-    <div key={data.id} className="image_container">
+// the currently existing musics from The json data
+function MusicDetail() {
+  return musicData.map((data, index) => (
+    <div key={index} className="image_container">
       <a href="#">
         <img
           width={"300px"}
@@ -137,10 +155,31 @@ function MusicInfo() {
       <h4 className="Music">Artist:{data.artist}</h4>
       <h4 className="Music">Duration:{data.duration}</h4>
       <h4 className="Music">gener:{data.genre}</h4>
-      {/* <div className="btn_container">
+    </div>
+  ));
+}
+
+// New Music Adding Component
+
+function NewMusic({ musicList }) {
+  return musicList.map((data, index) => (
+    <div key={index} className="image_container">
+      <a href="#">
+        <img
+          width={"300px"}
+          height={"200px"}
+          src={data.image}
+          alt={data.title}
+        />
+      </a>
+      <h4 className="Music">musicTitle: {data.title}</h4>
+      <h4 className="Music">Artist: {data.artist}</h4>
+      <h4 className="Music">Duration: {data.duration}</h4>
+      <h4 className="Music">Genre: {data.genre}</h4>
+      <div className="btn_container">
         <button className="btn">Delete</button>
         <button className="btn">Update</button>
-      </div> */}
+      </div>
     </div>
   ));
 }
