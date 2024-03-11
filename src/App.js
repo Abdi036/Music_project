@@ -6,7 +6,7 @@ export default function App() {
   const [musicList, setMusicList] = useState([]);
 
   //state to keep track of the id for key as we map through the new music
-  const [nextId, setNextId] = useState(1); 
+  const [nextId, setNextId] = useState(1);
 
   // Add music function
   function addMusic(music) {
@@ -138,12 +138,18 @@ function MusicForm({ onAddMusic }) {
           Add Music
         </button>
       </form>
-      <div>
-        <p>
-          Music is the universal language that transcends boundaries, speaks to
-          the soul, and paints emotions on the canvas of our existence. Music is
-          the universal language that transcends boundaries, speaks to the soul,
-          and paints emotions on the canvas of our existence. Music is the
+      <div className="search__container">
+        <input
+          className="searchInput"
+          type="text"
+          placeholder="Enter The music You want..."
+        />
+        <button className="searchBtn">Search</button>
+        <p style={{fontSize:'20px'}} className="music_quote">
+          Embark on a journey where words meet melody, and creativity knows no
+          bounds. Welcome to a space where imagination takes center stage, and
+          every click unfolds a symphony of possibilities. Explore, engage, and
+          let the rhythm of inspiration guide you through our digital realm.
         </p>
       </div>
     </div>

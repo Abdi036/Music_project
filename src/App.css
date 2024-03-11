@@ -35,14 +35,50 @@ body {
 
 /* style for The musicForm */
 .music_Form_Container {
-  margin-top: 1.5rem;
+  margin-top: 4rem;
   display: grid;
-  grid-template-columns: minmax(300px, 25%) 1fr;
-  gap: 0 2rem;
+  grid-template-columns: minmax(40px, 25%) 1fr;
 }
 
 .music_Form_Container div p {
   font-size: 13px;
+}
+.search__container {
+  margin-left: 13rem;
+  text-align: justify;
+  position: relative;
+}
+
+.searchInput {
+  border: none;
+  border-radius: 10rem;
+  padding: 1rem 4rem;
+  font-size: 1rem;
+  box-shadow: 2px 3px 5px #000;
+}
+
+.searchBtn {
+  position: absolute;
+  left: 35%;
+  background:linear-gradient(to bottom,#f25319,#ffa600);
+  color: #fff;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 10rem;
+  margin-left: 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 2px 3px 5px #000;
+}
+.searchBtn:active {
+  transform: translateY(2px);
+}
+
+.music_quote {
+  font-size: 15px;
+  margin-top: 2rem;
+  word-spacing: -5px;
+  font-style: italic;
 }
 
 form {
@@ -105,6 +141,7 @@ form button {
 }
 .btn:active {
   opacity: 1;
+  transform: translateY(2px);
 }
 .main_container {
   width: 90%;
