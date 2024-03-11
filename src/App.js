@@ -5,15 +5,26 @@ import { useState } from "react";
 export default function App() {
   const [musicList, setMusicList] = useState([]);
 
+  //state to keep track of the id for key as we map through the new music
+  const [nextId, setNextId] = useState(1); 
+
+  // Add music function
   function addMusic(music) {
-    setMusicList([...musicList, music]);
+    const newMusic = { ...music, id: nextId };
+    setMusicList([...musicList, newMusic]);
+    setNextId(nextId + 1);
+  }
+
+  // delete music function
+  function deleteMusic(id) {
+    setMusicList(musicList.filter((music) => music.id !== id));
   }
 
   return (
     <div className="App">
       <Header />
       <MusicForm onAddMusic={addMusic} />
-      <Musics musicList={musicList} />
+      <Musics musicList={musicList} onDeleteMusic={deleteMusic} />
       <Footer />
     </div>
   );
@@ -37,10 +48,10 @@ function Header() {
   );
 }
 
-function Musics({ musicList }) {
+function Musics({ musicList, onDeleteMusic }) {
   return (
     <main className="main_container">
-      <NewMusic musicList={musicList} />
+      <NewMusic musicList={musicList} onDeleteMusic={onDeleteMusic} />
       <MusicDetail />
     </main>
   );
@@ -141,16 +152,17 @@ function MusicForm({ onAddMusic }) {
 
 // the currently existing musics from The json data
 function MusicDetail() {
-  return musicData.map((data, index) => (
-    <div key={index} className="image_container">
-      <a href="#">
+  return musicData.map((data, id) => (
+    <div key={id} className="image_container">
+      <div>
         <img
+          style={{ cursor: "pointer" }}
           width={"300px"}
           height={"200px"}
           src={`imgs/${data.image}`}
           alt={data.musicTitle}
         />
-      </a>
+      </div>
       <h4 className="Music">musicTitle:{data.musicTitle}</h4>
       <h4 className="Music">Artist:{data.artist}</h4>
       <h4 className="Music">Duration:{data.duration}</h4>
@@ -160,24 +172,26 @@ function MusicDetail() {
 }
 
 // New Music Adding Component
-
-function NewMusic({ musicList }) {
-  return musicList.map((data, index) => (
-    <div key={index} className="image_container">
-      <a href="#">
+function NewMusic({ musicList, onDeleteMusic }) {
+  return musicList.map((data) => (
+    <div key={data.id} className="image_container">
+      <div>
         <img
+          style={{ cursor: "pointer" }}
           width={"300px"}
           height={"200px"}
           src={data.image}
           alt={data.title}
         />
-      </a>
+      </div>
       <h4 className="Music">musicTitle: {data.title}</h4>
       <h4 className="Music">Artist: {data.artist}</h4>
       <h4 className="Music">Duration: {data.duration}</h4>
       <h4 className="Music">Genre: {data.genre}</h4>
       <div className="btn_container">
-        <button className="btn">Delete</button>
+        <button className="btn" onClick={() => onDeleteMusic(data.id)}>
+          Delete
+        </button>
         <button className="btn">Update</button>
       </div>
     </div>
