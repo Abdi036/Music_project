@@ -4,27 +4,60 @@ import { useState } from "react";
 
 export default function App() {
   const [musicList, setMusicList] = useState([]);
+  const [nextId, setNextId] = useState(1); //state to keep track of the id for key as we map through the new music
+  const [sortBy, setSortBy] = useState("input");
 
-  //state to keep track of the id for key as we map through the new music
-  const [nextId, setNextId] = useState(1); 
-
-  // Add music function
+  // function for Adding music
   function addMusic(music) {
     const newMusic = { ...music, id: nextId };
     setMusicList([...musicList, newMusic]);
     setNextId(nextId + 1);
   }
 
-  // delete music function
+  // function for deleting music
   function deleteMusic(id) {
     setMusicList(musicList.filter((music) => music.id !== id));
   }
 
+  function handleSort(options) {
+    setSortBy(options);
+  }
+
+  ////////////////////////// sort for current existing musics/////////////////////////
+  let sortedData = musicData;
+
+  if (sortBy === "input") sortedData = musicData;
+
+  if (sortBy === "name")
+    sortedData = musicData
+      .slice()
+      .sort((a, b) => a.artist.localeCompare(b.artist));
+
+  /////////////////////////////////////////////////////////////////////////////////
+
+  ////////// sort for newly added musics //////////////////////////////////////////
+  let sortedMusic = [...musicList];
+
+  if (sortBy === "input") sortedMusic = [...musicList];
+
+  if (sortBy === "name")
+    sortedMusic = [...musicList]
+      .slice()
+      .sort((a, b) => a.artist.localeCompare(b.artist));
+
+  //////////////////////////////////////////////////////////////////////////////////////
+
+  //////////////////////////////////////////////////////////////////////////////////////
   return (
     <div className="App">
       <Header />
-      <MusicForm onAddMusic={addMusic} />
-      <Musics musicList={musicList} onDeleteMusic={deleteMusic} />
+      <MusicForm onAddMusic={addMusic} sortBy={sortBy} setSortBy={handleSort} />
+      <Musics
+        musicList={musicList}
+        onDeleteMusic={deleteMusic}
+        sortedData={sortedData}
+        sortedMusic={sortedMusic}
+      />
       <Footer />
     </div>
   );
@@ -48,18 +81,22 @@ function Header() {
   );
 }
 
-function Musics({ musicList, onDeleteMusic }) {
+function Musics({ musicList, onDeleteMusic, sortedData, sortedMusic }) {
   return (
     <main className="main_container">
-      <NewMusic musicList={musicList} onDeleteMusic={onDeleteMusic} />
-      <MusicDetail />
+      <NewMusic
+        musicList={musicList}
+        onDeleteMusic={onDeleteMusic}
+        sortedMusic={sortedMusic}
+      />
+      <MusicDetail musicList={musicList} sortedData={sortedData} />
     </main>
   );
 }
 
 /////////// a component for adding(rendering) a music from the form //////////
 
-function MusicForm({ onAddMusic }) {
+function MusicForm({ onAddMusic, sortBy, setSortBy }) {
   const [title, setTitle] = useState("");
   const [artist, setArtist] = useState("");
   const [duration, setDuration] = useState("");
@@ -77,7 +114,7 @@ function MusicForm({ onAddMusic }) {
     setArtist("");
     setDuration("");
     setGenre("");
-    setImage(null);
+    setImage("");
   }
   function handleImageChange(e) {
     const file = e.target.files[0];
@@ -138,21 +175,44 @@ function MusicForm({ onAddMusic }) {
           Add Music
         </button>
       </form>
-      <div>
-        <p>
-          Music is the universal language that transcends boundaries, speaks to
-          the soul, and paints emotions on the canvas of our existence. Music is
-          the universal language that transcends boundaries, speaks to the soul,
-          and paints emotions on the canvas of our existence. Music is the
+      <div className="search__container">
+        <input
+          className="searchInput"
+          type="text"
+          placeholder="Enter The music You want..."
+        />
+        <button className="searchBtn">Search</button>
+        <p style={{ fontSize: "20px" }} className="music_quote">
+          Embark on a journey where words meet melody, and creativity knows no
+          bounds. Welcome to a space where imagination takes center stage, and
+          every click unfolds a symphony of possibilities. Explore, engage, and
+          let the rhythm of inspiration guide you through our digital realm.
         </p>
+        <div>
+          <img
+            className="header_image"
+            src="imgs/pexels-victor-freitas-733767.jpg"
+            alt="BG_image"
+          />
+        </div>
+        <div>
+          <select
+            className="Select_box"
+            value={sortBy}
+            onChange={(e) => setSortBy(e.target.value)}
+          >
+            <option value="input">Sort by input order</option>
+            <option value="name">Sort by input name</option>
+          </select>
+        </div>
       </div>
     </div>
   );
 }
 
 // the currently existing musics from The json data
-function MusicDetail() {
-  return musicData.map((data, id) => (
+function MusicDetail({ sortedData }) {
+  return sortedData.map((data, id) => (
     <div key={id} className="image_container">
       <div>
         <img
@@ -163,17 +223,20 @@ function MusicDetail() {
           alt={data.musicTitle}
         />
       </div>
-      <h4 className="Music">musicTitle:{data.musicTitle}</h4>
-      <h4 className="Music">Artist:{data.artist}</h4>
-      <h4 className="Music">Duration:{data.duration}</h4>
-      <h4 className="Music">gener:{data.genre}</h4>
+      <div>
+        <h4 className="Music">musicTitle:{data.musicTitle}</h4>
+        <h4 className="Music">Artist:{data.artist}</h4>
+        <h4 className="Music">Duration:{data.duration}</h4>
+        <h4 className="Music">gener:{data.genre}</h4>
+      </div>
     </div>
   ));
 }
 
 // New Music Adding Component
-function NewMusic({ musicList, onDeleteMusic }) {
-  return musicList.map((data) => (
+function NewMusic({ sortedMusic, onDeleteMusic }) {
+  console.log(sortedMusic);
+  return sortedMusic.map((data) => (
     <div key={data.id} className="image_container">
       <div>
         <img
@@ -199,7 +262,6 @@ function NewMusic({ musicList, onDeleteMusic }) {
 }
 
 // /////////a component for Footer///////////
-
 function Footer() {
   return <div className="footer">@music_page All rights reserved &copy;</div>;
 }
